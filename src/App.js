@@ -4,6 +4,7 @@ import { useEffect, useState, memo } from "react";
 //import Form1 from "./Form1"
 //import Form2 from "./Form2"
 import CoinConverter from "./CoinConverter";
+import Movie from "./components/Movie"
 
 //const MemorizedForm = memo(Form2)
 
@@ -89,51 +90,56 @@ import CoinConverter from "./CoinConverter";
 //   );   
 // }
 
-function App() {
-  const [isLoading, setLoading] = useState(true);
-  const [coins, setCoins] = useState([]);
-  const [selectedCoinId, setSelectedCoinId] = useState("");
+//Coin Tracker app
+// function App() {
+//   const [isLoading, setLoading] = useState(true);
+//   const [coins, setCoins] = useState([]);
+//   const [selectedCoinId, setSelectedCoinId] = useState("");
 
-  useEffect(() => {
-    fetch("https://api.coinpaprika.com/v1/tickers")
-      .then((response) => response.json())
-      .then((json) => {
-        setCoins(json);
-        setSelectedCoinId(json[0].id)
+//   useEffect(() => {
+//     fetch("https://api.coinpaprika.com/v1/tickers")
+//       .then((response) => response.json())
+//       .then((json) => {
+//         setCoins(json);
+//         setSelectedCoinId(json[0].id)
 
-        setLoading(false);
-      });
-      console.log("Get coin data")
-  }, [])
+//         setLoading(false);
+//       });
+//       console.log("Get coin data")
+//   }, [])
 
 
-  return (
-    <div>
-      <h1>The Coins! {isLoading ? "" : `(${coins.length})`}</h1>
-      {isLoading ? 
-        <strong>Loading...</strong> :
-        <select value={selectedCoinId} onChange={e => setSelectedCoinId(e.target.value)}>
-          {coins.map((coin) => 
-            <option key={coin.id} value={coin.id}>
-              {coin.name} ({coin.symbol}): ${coin.quotes.USD.price} USD
-            </option>
-          )}
-        </select>
-      }
+//   return (
+//     <div>
+//       <h1>The Coins! {isLoading ? "" : `(${coins.length})`}</h1>
+//       {isLoading ? 
+//         <strong>Loading...</strong> :
+//         <select value={selectedCoinId} onChange={e => setSelectedCoinId(e.target.value)}>
+//           {coins.map((coin) => 
+//             <option key={coin.id} value={coin.id}>
+//               {coin.name} ({coin.symbol}): ${coin.quotes.USD.price} USD
+//             </option>
+//           )}
+//         </select>
+//       }
 
-      {isLoading ? 
-      null :
-      <CoinConverter coin={coins.find((coin) => {return coin.id === selectedCoinId})}/>
-      }
+//       {isLoading ? 
+//       null :
+//       <CoinConverter coin={coins.find((coin) => {return coin.id === selectedCoinId})}/>
+//       }
       
-      {/* <ul>
-        {coins.map((coin) => 
-        <li>
-          {coin.name} ({coin.symbol}): ${coin.quotes.USD.price} USD
-        </li>)}
-      </ul> */}
-    </div>
-  );
+//       {/* <ul>
+//         {coins.map((coin) => 
+//         <li>
+//           {coin.name} ({coin.symbol}): ${coin.quotes.USD.price} USD
+//         </li>)}
+//       </ul> */}
+//     </div>
+//   );
+// }
+
+function App(){
+  return null;
 }
 
 export default App;
