@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.js": "/Teurowel/reacttutorial/static/js/main.5711c1df.js",
+    "main.js": "/Teurowel/reacttutorial/static/js/main.c329cfcf.js",
     "index.html": "/Teurowel/reacttutorial/index.html",
-    "main.5711c1df.js.map": "/Teurowel/reacttutorial/static/js/main.5711c1df.js.map"
+    "main.c329cfcf.js.map": "/Teurowel/reacttutorial/static/js/main.c329cfcf.js.map"
   },
   "entrypoints": [
-    "static/js/main.5711c1df.js"
+    "static/js/main.c329cfcf.js"
   ]
 }
